@@ -319,9 +319,9 @@ def number_to_human(n):
 
 
 def split_space(start, end, count) -> List[int]:
-    size = end - start
+    size = int(end - start)
     assert count <= size, (count, size)
-    return list(range(start, end, (size + 1) // (count + 1)))[1 : count + 1]
+    return list(range(int(start), int(end), (size + 1) // (count + 1)))[1 : count + 1]
 
 
 def remove_passwords_in_dict(d: dict, replace_with: str = "***"):

@@ -258,7 +258,7 @@ class BaseDialect(abc.ABC):
             return self.render_coltype(attrs.evolve(compiler, root=False), elem)
         elif isinstance(elem, str):
             return f"'{elem}'"
-        elif isinstance(elem, (int, float)):
+        elif isinstance(elem, (int, float, decimal.Decimal)):
             return str(elem)
         elif isinstance(elem, datetime):
             return self.timestamp_value(elem)
